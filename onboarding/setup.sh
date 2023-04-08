@@ -19,6 +19,16 @@ then
     brew install git
 fi
 
+# install direnv
+which -s direnv
+if [[ $? != 0 ]]
+then
+    echo "Installing direnv"
+    brew install direnv
+    echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
+fi
+
+
 # install asdf for environment management
 which -s asdf
 if [[ $? != 0 ]] 
