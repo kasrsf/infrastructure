@@ -47,6 +47,7 @@ asdf plugin add terraform
 asdf plugin add awscli
 
 asdf install python 3.11.2
+asdf install python 3.9.16
 asdf install terraform 1.4.4
 asdf install awscli 2.11.9 
 
