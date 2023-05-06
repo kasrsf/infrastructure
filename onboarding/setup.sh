@@ -79,3 +79,13 @@ then
 else
     echo "poetry is already installed"
 fi
+
+# install cloudflare wrangler cli tool
+which -s wrangler
+if [[ $? != 0 ]]
+then
+    echo "Installing Cloudflare Wrangler"
+    npm install -g wrangler
+else
+    echo "Wrangler is already installed"
+fi
