@@ -58,11 +58,12 @@ asdf plugin add nodejs
 asdf install python 3.11.2
 asdf install python 3.9.16
 asdf install terraform 1.4.4
+asdf install terraform 1.5.0
 asdf install awscli 2.11.9 
 asdf install nodejs 18.16.0
 
 asdf global python 3.11.2
-asdf global terraform 1.4.4
+asdf global terraform 1.5.0
 asdf global awscli 2.11.9
 asdf global nodejs 18.16.0
 
