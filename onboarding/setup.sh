@@ -54,6 +54,8 @@ asdf plugin add python
 asdf plugin add terraform
 asdf plugin add awscli
 asdf plugin add nodejs
+asdf plugin add 1password-cli
+asdf plugin-add poetry https://github.com/asdf-community/asdf-poetry.git
 
 asdf install python 3.11.2
 asdf install python 3.9.16
@@ -61,25 +63,15 @@ asdf install terraform 1.4.4
 asdf install terraform 1.5.0
 asdf install awscli 2.11.9 
 asdf install nodejs 18.16.0
+# have to add export PATH="$HOME/.asdf/installs/poetry/1.6.1/bin":$PATH to shell rc file
+asdf install poetry 1.6.1
 
 asdf global python 3.11.2
 asdf global terraform 1.5.0
 asdf global awscli 2.11.9
 asdf global nodejs 18.16.0
+asdf global poetry 1.6.1
 
-# install poetry for python package management
-which -s poetry
-if [[ $? != 0 ]] 
-then
-    echo "Installing poetry"
-    curl -sSL https://install.python-poetry.org | python3 -
-    echo >> ~/.zshrc
-    echo "# Poetry" >> ~/.zshrc
-    echo 'export PATH="$HOME/.local/bin":$PATH' >> ~/.zshrc
-    echo >> ~/.zshrc
-else
-    echo "poetry is already installed"
-fi
 
 # install cloudflare wrangler cli tool
 which -s wrangler
@@ -89,4 +81,14 @@ then
     npm install -g wrangler
 else
     echo "Wrangler is already installed"
+fi
+
+# install 1password cli tool
+which -s op
+if [[ $? != 0 ]]
+then
+    echo "Installing 1Password CLI"
+    brew install --cask 1password/tap/1password-cli
+else
+    echo "1password cli is already installed"
 fi
