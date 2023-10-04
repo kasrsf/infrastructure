@@ -32,6 +32,16 @@ else
     echo "direnv is already installed"
 fi
 
+# install graphviz
+which -s graphviz
+if [[ $? != 0 ]]
+then
+    echo "Installing graphviz"
+    brew install graphviz
+else
+    echo "graphviz is already installed"
+fi
+
 
 # install asdf for environment management
 which -s asdf
@@ -57,6 +67,7 @@ asdf plugin add nodejs
 asdf plugin add 1password-cli
 asdf plugin-add poetry https://github.com/asdf-community/asdf-poetry.git
 
+asdf install python 3.12.0
 asdf install python 3.11.2
 asdf install python 3.9.16
 asdf install terraform 1.4.4
@@ -66,7 +77,7 @@ asdf install nodejs 18.16.0
 # have to add export PATH="$HOME/.asdf/installs/poetry/1.6.1/bin":$PATH to shell rc file
 asdf install poetry 1.6.1
 
-asdf global python 3.11.2
+asdf global python 3.12.0
 asdf global terraform 1.5.0
 asdf global awscli 2.11.9
 asdf global nodejs 18.16.0
