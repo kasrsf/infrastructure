@@ -1,3 +1,5 @@
+# TODO: this approach is not stable. look into using dev containers for more stable setup
+
 ## Install homebrew
 ## Check if exists
 which -s brew
@@ -41,6 +43,10 @@ then
 else
     echo "graphviz is already installed"
 fi
+
+# install go
+echo "Installing go"
+brew install go
 
 
 # install asdf for environment management
